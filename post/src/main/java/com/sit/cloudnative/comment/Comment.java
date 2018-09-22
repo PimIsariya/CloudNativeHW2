@@ -34,7 +34,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @Table(name = "comment")
 public class Comment implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    // private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -44,14 +44,14 @@ public class Comment implements Serializable {
     private String text;
 
     
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "userId")
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
     private User userId;
 
     
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "postId")
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore

@@ -59,6 +59,9 @@ public class User implements Serializable{
     public int getUserId(){
         return userId;
     }
+    public void setUserId(int userId){
+        this.userId = userId;
+    }
 
     public String getFirstName(){
         return firstname;

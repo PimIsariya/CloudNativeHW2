@@ -35,6 +35,11 @@ public class PostController{
         List<Post> posts = postService.getAllPost();
         return new ResponseEntity<List<Post>>(posts, HttpStatus.OK);
     }
+    // @RequestMapping(value = "/allpost", method = RequestMethod.GET)
+    // public ResponseEntity<List<Post>> getPostList(@Valid Post post){
+    //     Object posts = postService.getListAllPost(post);
+    //     return new ResponseEntity<List<Post>>(HttpStatus.OK);
+    // }
 
     @RequestMapping(value = "/user/{userid}/post", method = RequestMethod.POST)
     public ResponseEntity<Post> createPost(@PathVariable("userid") User userid, @Valid @RequestBody Post post){

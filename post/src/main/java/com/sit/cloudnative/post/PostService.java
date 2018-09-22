@@ -17,9 +17,17 @@ public class PostService {
         
         private Post postRequest;
 
-        public List<Post> getAllPost() {
+
+        public List<Post> getAllPost() {           
             return postRepository.findAll();
         }
+        /*ลองadd เพิ่มนะ */
+        // public Object getListAllPost(Post post) {
+        //     Object[] listAllPost = new Object[2];
+        //     listAllPost[0] = getAllPost();
+        //     listAllPost[1] = post.getUser();
+        //     return postRepository.findAll();
+        // }
 
         public Post create(User user_id, Post post){
             post.setUser(user_id);

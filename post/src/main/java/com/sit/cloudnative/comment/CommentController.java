@@ -39,7 +39,7 @@ public class CommentController {
     }
 
     @RequestMapping(value = "/comment/{id}", method = RequestMethod.GET)
-    public ResponseEntity<Optional<Comment>> getPost(@PathVariable("id") int id) {
+    public ResponseEntity<Optional<Comment>> getComment(@PathVariable("id") int id) {
         Optional<Comment> comment = commentService.getCommentById(id);
         return new ResponseEntity<Optional<Comment>>(comment, HttpStatus.OK);
     }
