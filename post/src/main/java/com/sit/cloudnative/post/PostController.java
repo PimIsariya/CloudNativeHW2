@@ -47,11 +47,11 @@ public class PostController{
         return new ResponseEntity<Post>(post_object, HttpStatus.OK);
     }
 
-    // @RequestMapping(value = "/post/{id}", method = RequestMethod.GET)
-    // public ResponseEntity<Optional<Post>> getPost(@PathVariable("id") int id) {
-    //     Optional<Post> post = postService.getPostById(id);
-    //     return new ResponseEntity<Optional<Post>>(post, HttpStatus.OK);
-    // }
+    @RequestMapping(value = "/post/{id}", method = RequestMethod.GET)
+    public ResponseEntity<Optional<Post>> getPost(@PathVariable("id") int id) {
+        Optional<Post> post = postService.getPostById(id);
+        return new ResponseEntity<Optional<Post>>(post, HttpStatus.OK);
+    }
 
     @RequestMapping(value = "/post/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<Post> deletePost(@PathVariable("id") int id){
